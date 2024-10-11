@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoaderService } from '../../loader.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
   loaderImages = [
     { src: 'assets/animal3.jpg', text: 'Cargando, por favor espera...' },
     { src: 'assets/animal2.jpg', text: 'Estamos preparando algo especial...' },
@@ -14,7 +15,15 @@ export class HomePage {
 
   showLoader: boolean = false;
 
+  constructor(private loaderService: LoaderService) {}
+
+  ngOnInit() {
+    this.loaderService.loading$.subscribe(isLoading => {
+      this.showLoader = isLoading;
+    });
+  }
+
   toggleLoader() {
-    this.showLoader = !this.showLoader;
+    this.loaderService.show();
   }
 }

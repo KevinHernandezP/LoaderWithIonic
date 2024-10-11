@@ -25,6 +25,6 @@ export class LoaderComponent implements OnInit {
     
     setTimeout(() => {
       this.router.navigate(['/profile']);
-    }, this.interval * this.images.length + 1); 
+    }, this.interval * this.images.length + 10); 
   }
 }

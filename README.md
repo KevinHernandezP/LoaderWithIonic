@@ -1,3 +1,6 @@
+![enter image description here](https://pixelpro.es/pagamastarde/wp-content/uploads/2021/07/ionicangular.png)
+
+
 
 1. Título del Proyecto:
 Nombre del Proyecto:  Loader Component con Ionic y Angular

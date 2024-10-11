@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'loading',
+    loadChildren: () => import('./loader/loader.component').then(m => m.LoaderComponent)
+  }, 
+  { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({
